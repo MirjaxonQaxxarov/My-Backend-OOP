@@ -17,6 +17,7 @@ else{
 		$number++;
 	}
 
+    
 	if (true) {
 		$table = str_rot13($_GET['table']);
 		$obj = [];

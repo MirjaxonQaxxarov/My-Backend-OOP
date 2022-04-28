@@ -20,6 +20,7 @@ else{
 		$table = str_rot13($_GET['table']);
 		$obj = [];
 		require_once '../models/model.php';
+        
 		foreach ($_POST as $key => $value){
 			if ($key != '_csrf') {
 				$obj += [str_rot13(clean($key)) => filter($value)];

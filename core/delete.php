@@ -11,6 +11,7 @@
 		else{
 			$_SESSION['_csrf'] = md5(time());
 			require '../models/model.php';
+            
 			$id = filter($_GET['id']);
 			$table = filter($_GET['table']);
 			 

@@ -22,13 +22,12 @@
     <form" id="form">
         <input type="text" name="<?=str_rot13("key1")?>" placeholder="id value" >
         <input type="hidden" name="_csrf" value="<?=$_SESSION['_csrf']?>" id="_csrf"> <br>
-        <button></button>
+        <button id="submit">Submit</button>
     </form>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-    
-  let submitBtn = document.getElementById('ok1');
+  let submitBtn = document.getElementById('submit');
     submitBtn.addEventListener("click", function submit(e) {
       e.preventDefault();
       $.ajax({
