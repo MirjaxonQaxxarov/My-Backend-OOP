@@ -34,7 +34,7 @@
     submitBtn.addEventListener("click", function submit(e) {
       e.preventDefault();
       $.ajax({
-        url: "core/add?table=<?=str_rot13("table_name")?>&number=<?=$num_inputs*$keyuser?>",
+        url: "core/edit?table=<?=str_rot13("table_name")?>&number=<?=$num_inputs*$keyuser?>",
         type: 'POST',
         processData: false,
         contentType: false,

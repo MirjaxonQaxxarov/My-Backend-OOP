@@ -20,9 +20,7 @@
 </head>
 <body>
     <form" id="form">
-        <input type="text" name="<?=str_rot13("key1")?>" >
-        <input type="text" name="<?=str_rot13("key2")?>" >
-        <input type="file" name="<?=str_rot13("key3")?>" >
+        <input type="text" name="<?=str_rot13("key1")?>" placeholder="id value" >
         <input type="hidden" name="_csrf" value="<?=$_SESSION['_csrf']?>" id="_csrf"> <br>
         <button></button>
     </form>
@@ -34,7 +32,7 @@
     submitBtn.addEventListener("click", function submit(e) {
       e.preventDefault();
       $.ajax({
-        url: "core/add?table=<?=str_rot13("table_name")?>&number=<?=$num_inputs*$keyuser?>",
+        url: "core/delete?table=<?=str_rot13("table_name")?>&number=<?=$num_inputs*$keyuser?>",
         type: 'POST',
         processData: false,
         contentType: false,

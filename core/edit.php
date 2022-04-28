@@ -20,11 +20,11 @@ else{
 	if (true) {
 		$table = str_rot13($_GET['table']);
 		$obj = [];
-		require_once '../model.php';
+		require_once '../models/model.php';
 		foreach ($_POST as $key => $value){
 			if ($key != '_csrf') {
 				if (strlen($value)>0) {
-					$obj += [clean($key) => filter($value)];
+					$obj += [str_rot13(clean($key)) => filter($value)];
 				}
 				
 			}
@@ -33,17 +33,17 @@ else{
 			
 			  $file='';
 			  if (isset($value)) {
-		    $target_dir="FOLDER_PATH".clean($key)."/";
+		    $target_dir="FOLDER_PATH".str_rot13(clean($key))."/";
 		    $y=md5(time());
 		    $tip = strtolower(pathinfo($value["name"],PATHINFO_EXTENSION));
-		    $value["name"]=clean($key)."_".$y.".".$tip;
+		    $value["name"]=str_rot13(clean($key))."_".$y.".".$tip;
 		    $target_file=$target_dir.basename($value["name"]);
 			if (move_uploaded_file($value["tmp_name"], $target_file))
 				$file=$value["name"];
 			}
 
 			if(strlen($file)>1){
-				$obj += [clean($key) => filter($file)];
+				$obj += [str_rot13(clean($key)) => filter($file)];
 			}
  			
 		}
